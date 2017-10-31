@@ -19,7 +19,7 @@ function addAction () {
   document.getElementById("list").appendChild(newli);         // Appending the list item to the main list 
   document.getElementById("action").value = "";               // Setting the text bar to blank
 
-  // Adding a check mark in front of the added element 
+// Adding a check mark in front of the added element 
   
   var newSpan = document.createElement("SPAN");
   var checkMark = document.createTextNode("     \u2713");
@@ -27,3 +27,12 @@ function addAction () {
   newSpan.appendChild(checkMark);
   newli.appendChild(newSpan);
 }
+
+// Appending to the list on typing in the text box and pressing enter
+
+var pressEnter = document.getElementById("action");
+pressEnter.addEventListener("keydown", function (e) {
+    if (e.keyCode === 13) {                                  //checks whether the pressed key is "Enter"
+        addAction();
+    }
+});
