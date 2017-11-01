@@ -1,10 +1,10 @@
 // Deleting the element on clicking the check-mark appended to the end of the data entry
 
 function removeElement(remove) {
-	for(var i=0 ; i<remove.length ; i++){
-		remove[i].onclick = function(){
-			var item = this.parentElement;
-			item.style.display="none";
+	for(var i=0 ; i<remove.length ; i++){                     // Parse through all items with check marks  
+		remove[i].onclick = function(){                       // Create a fuction to be called on clicking the check mark
+			var item = this.parentElement;                    // Get the parent element of the check mark
+			item.style.display="none";                        // Remove it from the list 
 		}
 	}
 }
