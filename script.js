@@ -16,8 +16,12 @@ function removeElement(remove) {
 				message = "You have nothing in you to-do List!!";
 				document.querySelector("#count").textContent=message;               // Display the message 
 			}
+			else if(count==1){
+				message = "You have " + count + " item in your to-do List";
+				document.querySelector("#count").textContent=message;
+			}
 			else{
-				message = "You have " + count + " elements in your to-do List";
+				message = "You have " + count + " items in your to-do List";
 				document.querySelector("#count").textContent=message;
 			}
 			
@@ -31,7 +35,7 @@ function addAction () {
 	var action = document.getElementById("action").value;           // Get the text from the text bar
 
 	if(action.trim()){                   	                        // Trim all the unecessary white-spaces to prevent adding empty strings to the list
-	 
+
  		var newli = document.createElement('li');                   // Creating a new list item
   		var t = document.createTextNode(action);                    // Create a text node with the text from text bar
   		newli.appendChild(t);                                       // Setting the new list item with the value of text node 
@@ -54,8 +58,12 @@ function addAction () {
 			message = "You have nothing in you to-do List!!";
 			document.querySelector("#count").textContent=message;               // Display the message 
 		}
+		else if(count==1){
+			message = "You have " + count + " item in your to-do List";
+			document.querySelector("#count").textContent=message;
+		}
 		else{
-			message = "You have " + count + " elements in your to-do List";
+			message = "You have " + count + " items in your to-do List";
 			document.querySelector("#count").textContent=message;
 		}
 
