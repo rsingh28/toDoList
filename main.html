@@ -2,24 +2,24 @@
 <html lang="en">
 <head>
 <title> To-Do List Web App </title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<h1 align="center"> Basic to-do list web-app </h1>
+<div class="header">
 
-<p>
+<h1>Best To-Do List App On Planet</h1>
 
-Enter an item to be done in this text box - 
+<input type="search" id="action" placeholder="Enter tasks to your list ! Click on the item to mark as completed or remove it by clicking the 'X'" >
+<button onclick="addAction();" type="button" class="addBtn"> Add Item! </button>
 
-<input type="search" id="action" placeholder="Write Here!">
-<button onclick="addAction();"> Add Item! </button>
+</div>
 
 <h2 align="center" id="count">You have nothing in you to-do List!!</h2>
 
+
 <ul id="list">
 </ul>
-
-</p>
 
 <script src="script.js"></script>
 

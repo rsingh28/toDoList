@@ -45,7 +45,7 @@ function addAction () {
   		// Adding a check mark in front of the added element 
   
   		var newSpan = document.createElement("SPAN");               // New span element
-  		var checkMark = document.createTextNode("     \u2713");     // Creating a check mark using uni-code
+  		var checkMark = document.createTextNode("\u2717");          // Creating a check mark using uni-code
   		newSpan.className = "close";                                // Will be used furthur to basically remove the item on clicking the check mark
   		newSpan.appendChild(checkMark);                             // Append the check mark to the new spam element
   		newli.appendChild(newSpan);                                 // Append the spam element (the check mark) to the list element 
@@ -74,6 +74,14 @@ function addAction () {
 
   	}
 }
+
+// Add a "checked" symbol when clicking on a list item
+var checkSymbol = document.querySelector('ul');
+list.addEventListener('click', function(ev) {
+  if (ev.target.tagName === 'LI') {
+    ev.target.classList.toggle('checked');
+  }
+}, false);
 
 // Appending to the list on typing in the text box and pressing enter
 
