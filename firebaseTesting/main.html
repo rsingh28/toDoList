@@ -1,0 +1,37 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Testing out Firebase</title>
+
+</head>
+
+<body>
+
+<h1 id="header">Testing out Firebase</h1>
+
+<input id="input" placeholder="Enter Text Here">
+<button id="btn" onclick="addToDB()">Click Me</button>
+
+
+
+<script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyAkpfCbYJmTZ94mxgXaNKU54A0CBeR5Tz0",
+    authDomain: "todolist-bed2a.firebaseapp.com",
+    databaseURL: "https://todolist-bed2a.firebaseio.com",
+    projectId: "todolist-bed2a",
+    storageBucket: "",
+    messagingSenderId: "359956321420"
+  };
+  firebase.initializeApp(config);
+</script>
+
+<script src="backend.js"></script>
+
+</body>
+</html>
