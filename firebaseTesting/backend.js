@@ -1,4 +1,5 @@
 var data = document.getElementById('input');
+var data1 = document.getElementById('input1');
 var btn = document.getElementById('btn');
 var header = document.getElementById('header');
 
@@ -17,6 +18,16 @@ function addToDB(){
 	tempRef.on('value', snap => header.innerText = snap.val());
 
 	// Creating a new key "New Text" and assiging it the value typed in the text box 
-	firebaseRef.child("New Text").set(data.value);
+	firebaseRef.child("Text").set(data.value);
+
+}
+
+function addToDB1(){
+
+	// Set a reference to the root object
+	var firebaseRef = firebase.database().ref();
+
+	// Generate a random key everytime and assign value to it
+	firebaseRef.push(data1.value);
 
 }
