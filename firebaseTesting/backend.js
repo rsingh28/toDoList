@@ -1,7 +1,38 @@
 var data = document.getElementById('input');
 var data1 = document.getElementById('input1');
+var data2 = document.getElementById('input2');
 var btn = document.getElementById('btn');
 var header = document.getElementById('header');
+var elemNum = 0;
+
+// Retrieving data using the exact location of the child element 
+
+function displayDBcontent(elemNum,data){
+
+	// Creating new list element 
+	var newItem = document.createElement("li");
+
+	// Setting reference to the exactchild element from which we want to retrieve data 
+	var displayRef = firebase.database().ref().child("Element"+elemNum);
+
+	// Retreiving data from the child element 
+	displayRef.on("value",function (snapshot){
+		var data = snapshot.val();            // Data is stored in snapshot and can be retrieved using snapshot.val()
+		console.log(data);                    // Displaying retreived data on console for debugging 
+	});
+
+	// Creating text node from the retreived data 
+	var text = document.createTextNode(data);
+
+	// New list item ready
+	newItem.appendChild(text);
+
+	// Appending the item to the listto display using HTML
+	document.getElementById("List").appendChild(newItem);
+
+	//Making the text field blank
+	document.getElementById("input2").value="";
+}
 
 function addToDB(){
 
@@ -30,4 +61,19 @@ function addToDB1(){
 	// Generate a random key everytime and assign value to it
 	firebaseRef.push(data1.value);
 
+}
+
+function addToDB2(){
+
+	// Setting reference to database
+	var firebaseRef = firebase.database().ref();
+
+	//Increasing element count
+	elemNum++;
+
+	// Setting the child name and initializing it
+	firebaseRef.child("Element"+elemNum).set(data2.value);
+
+	// Function call
+	displayDBcontent(elemNum,data2.value);
 }
